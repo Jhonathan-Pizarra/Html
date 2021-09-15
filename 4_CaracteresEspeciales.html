@@ -15,8 +15,6 @@
     <a href="https://www.w3schools.com/html/html_entities.asp" target="_blank">Más Entidades!</a> <br>
     también sirven para palabras con tilde, o caracteres como la 'ñ'  <br>
 
-
-
     <h1>Emojis...</h1>
     <p style="font-size:50px">&#129409;</p><br>
     <a href="https://www.w3schools.com/charsets/ref_emoji.asp" target="_blank">Más Emojis!</a>
@@ -25,6 +23,96 @@
     <p>Simbolo de: &euro;</p> <!--Estoy usando nombre, pero también podría usar el número &#8364-->
     <a href="https://www.w3schools.com/html/html_symbols.asp" target="_blank">Más Simbolos!</a>
 
-    
+    <h1>Charset...</h1> <!---->
+    La especificación HTML5 anima a los desarrolladores web a utilizar el juego de caracteres UTF-8, que cubre casi todos los caracteres y símbolos del mundo.
+    por eso se usa la etiqeuta: meta charset="UTF-8". <br>
+    Antes se usaban ASCII, ANSI, ISO-8859 y finalmente, UTF-8. Pudes ver más sobre estos en
+    <a href="https://www.w3schools.com/html/html_charset.asp">diferencias entre conjuntos de caracteres </a>
+
+    <h1>Urls</h1>
+    Un localizador uniforme de recursos (URL) se utiliza para direccionar un documento (u otros datos) en la web.
+    Una dirección web como https://www.w3schools.com/html/default.asp sigue estas reglas de sintaxis: 
+    scheme://prefix.domain:port/path/filename, <br> dónde:
+    <ul>
+        <li><b>esquema:</b> define el tipo de servicio de Internet (el más común es http o https)</li>
+        <li><b>prefijo:</b> define un prefijo de dominio (el valor predeterminado para http es www)</li>
+        <li><b>dominio:</b> define el nombre de dominio de Internet (como w3schools.com)</li>
+        <li><b>puerto:</b> define el número de puerto en el host (el valor predeterminado para http es 80)</li>
+        <li><b>ruta:</b> define una ruta en el servidor (si se omite: el directorio raíz del sitio)</li>
+        <li><b>nombre de archivo:</b> define el nombre de un documento o recurso</li>
+    </ul>
+
+    Los esquemas de url más comunes son: http, https, file, ftp.
+    <h2>Codificación de URL</h2>
+    Las URL solo se pueden enviar a través de Internet utilizando el juego de caracteres ASCII. <br>
+    Si una URL contiene caracteres fuera del conjunto ASCII, la URL debe convertirse.<br>
+    La codificación de URL convierte los caracteres que no son ASCII en un formato que se puede transmitir a través de Internet.<br>
+    La codificación de URL reemplaza los caracteres que no son ASCII con un "%" seguido de dígitos hexadecimales.<br>
+
+    <p>
+        ¿Has visto por ejemplo la API de Whatsapp, cuando escribes Hola! la url cambia con unos simbolos extraños? https://www.w3schools.com/action_page2.php?text=Hola%21 es la traducción <br>
+        Sin embargo si solo pusiera Hola, la traducción sería más sencilla: https://www.w3schools.com/action_page2.php?text=Hola<br>
+        puedes hacer más pruebas en <a href="https://www.w3schools.com/html/html_urlencode.asp">codificador de caracteres</a>
+    </p>
+
+    <h1>HTML vs XHTML</h1>
+    ¿Recuerdas a xml?: un lenguaje de marcado donde todos los documentos deben estar marcados correctamente (estar "bien formados"). <br>
+    ¿Recuerdas a html?: un lenguaje de marcado que nos permite indicar la estructura de nuestro documento mediante etiquetas. <br>
+    Bueno, pues XHTML fue desarrollado para hacer html más extensible y flexible para trabajar con otros formatos de datos (como XML). <br>
+    Los navegadores ignoran los errores en las páginas HTML e intentan mostrar el sitio web incluso si tiene algunos errores en el marcado. Por lo que, XHTML viene con un manejo de errores mucho más estricto.
+    <ul>
+        <li>! DOCTYPE es obligatorio</li>
+        <li>El atributo xmlns de "html" es obligatorio</li>
+        <li>html, head, title y body es obligatorios</li>
+        <li>Los elementos siempre deben estar correctamente anidados</li>
+        <li>Los elementos deben estar siempre cerrados</li>
+        <li>Los elementos deben estar siempre en minúsculas</li>
+        <li>Los nombres de atributos siempre deben estar en minúsculas</li>
+        <li>Los valores de atributo siempre deben estar entrecomillados</li>
+        <li>La minimización de atributos está prohibida</li>
+    </ul>
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> <!--DOCTYPE es obligatio-->
+    <html xmlns="http://www.w3.org/1999/xhtml"> <!--El atributo xmlns de "html" es obligatorio-->
+        <head> <!--head, title, y body son obligatiorios-->
+        <title>Title of document</title>
+        </head>
+        <body>
+            <!--Los elementos siempre deben estar correctamente anidados-->
+            <b><i>Some text</b></i><!--MAL-->
+            <b><i>Some text</i></b><!--BIEN-->
+
+            <!--Los elementos deben estar siempre cerrados-->
+            <p>This is a paragraph <!--MAL-->
+            <p>This is a paragraph</p><!--BIEN-->
+
+            <!--Los elementos vacíos deben siempre cerrarse-->
+            <p>This is a paragraph <!--MAL-->
+            <p>This is a paragraph</p><!--BIEN-->
+
+            <!--Los elementos deben estar siempre en minúsculas-->
+            A break: <br> <!--MAL-->
+            A break: <br /> <!--BIEN-->
+
+            <!--Los nombres de atributos siempre deben estar en minúsculas-->
+            <B>Algo</B><!--MAL-->
+            <b>Some text</b><!--BIEN-->
+
+            <!--Los valores de atributo siempre deben estar entrecomillados-->
+            <a href=https://www.w3schools.com/html/>Visit our HTML tutorial</a><!--MAL-->
+            <a href="https://www.w3schools.com/html/">Visit our HTML tutorial</a>><!--BIEN-->
+
+            <!--La minimización de atributos está prohibida-->
+            <input type="checkbox" name="vehicle" value="car" checked /> <!--MAL-->
+            <input type="checkbox" name="vehicle" value="car" checked="checked" /> <!--BIEN-->
+
+        </body>
+    </html>
+
+    <p>
+        Puedes validar si tu página cumple las normas xhtml aquí </br>
+        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.w3schools.com%2Fhtml%2Fhtml_validate.html"> Validador </a>
+    </p>
+
 </body>
 </html>

@@ -19,8 +19,9 @@
     <br>
 
     <h1>Label</h1>
-    <spam>efine una etiqueta para muchos elementos de formulario. Es útil para los usuarios de lectores de pantalla, 
+    <spam>define una etiqueta para muchos elementos de formulario. Es útil para los usuarios de lectores de pantalla, 
     porque el lector de pantalla leerá la etiqueta cuando el usuario se centre en el elemento de entrada.</spam>
+
 
     <h1>Input tipo texto</h1>
     <form>
@@ -30,7 +31,523 @@
         <input type="text" id="lname" name="lname">
     </form>
          
+    <h1>Radio Button</h1>
+    <span>Los botones de opción permiten al usuario seleccionar UNA de un número limitado de opciones.</span>
+    <p>Elige tu lengujae favorito:</p>
+    <form>
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">JavaScript</label>
+    </form>
 
+    <h1>Checkboxes</h1>
+    <span>Las casillas de verificación permiten a un usuario seleccionar CERO o MÁS opciones de un número limitado de opciones.</span>
+    <p>¿Cuál de estas tienes? :</p>
+    <form>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        <label for="vehicle1"> I have a bike</label><br>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        <label for="vehicle2"> I have a car</label><br>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        <label for="vehicle3"> I have a boat</label>
+    </form>
+
+    <h1>Botón Submit</h1>
+    <span>
+        <p>El controlador de formulario suele ser un archivo en el servidor con un script para procesar datos de entrada.</p>
+        <p>El controlador de formulario se especifica en el atributo del formulario.action</p>
+    </span>
+    <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+    </form> <!--Se envía a traves de la URL, los datos: firstname=John&lastname=Doe -->
+
+    <h1>Atributos</h1>
+    <h3>Action</h3>
+    El atributo "action" define la acción que se va a realizar cuando se envía el formulario </br>
+    Por lo general, los datos del formulario se envían a un archivo en el servidor cuando el usuario hace clic en el botón enviar. </br>
+
+    <h3>Target</h3>
+    El atributo especifica dónde mostrar la respuesta que se recibe después de enviar el formulario. </br>
+    Puede tener los valores de: _bank, _top, _self, _parent. El valor predeterminado es _self </br>
+    <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_target" target="_blank">Comprobar los target</a>
+
+    <h3>Method</h3>
+    El atributo especifica el método HTTP que se utilizará al enviar los datos del formulario
+    Los datos del formulario se pueden enviar como variables URL (get) o como transacción HTTP (post)
+    El método HTTP predeterminado al enviar datos de formulario es GET.
+
+    <form action="/action_page.php" target="_blank" method="get"> <!--sería algo como: https://www.w3schools.com/action_page.php?fname=John&lname=Doe-->
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <ul>
+        <li> Anexa los datos del formulario a la dirección URL, en pares nombre/valor</li>
+        <li>¡NUNCA use GET para enviar datos confidenciales! (¡los datos del formulario enviados son visibles en la URL!)</li>
+        <li>La longitud de una URL es limitada (2048 caracteres)</li>
+        <li>Útil para envíos de formularios en los que un usuario desea marcar el resultado</li>
+        <li>GET es bueno para datos no seguros, como cadenas de consulta en Google</li>
+    </ul>
+   
+    <form action="/action_page.php" target="_blank" method="post"> <!--sería algo como: https://www.w3schools.com/action_page.php-->
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <ul>
+        <li>Anexa los datos del formulario dentro del cuerpo de la solicitud HTTP (los datos del formulario enviados no se muestran en la dirección URL </li>
+        <li>POST no tiene limitaciones de tamaño y se puede utilizar para enviar grandes cantidades de datos.</li>
+        <li>Los envíos de formularios con POST no se pueden marcar como favoritos</li>
+    </ul>
+
+
+    <h3>Autocompletar</h3>
+    El atributo especifica si un formulario debe tener autocompletado encendido o desactivado.</br>
+    Cuando el autocompletado está encendido, el navegador completa automáticamente los valores en función de los valores que el usuario ha introducido antes. </br>
+    <p>Prueba poniendo el autocompletado en "off"</p>
+    <form action="/action_page.php" autocomplete="on">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+        <input type="submit">
+    </form>
+      
+    <h1>Elementos form de HTML</h1>
+    <ul>
+        <li> <code>&lt;input&gt;</code></li>
+          <li> <code>&lt;label&gt;</code></li>
+          <li> <code>&lt;select&gt;</code></li>
+        <li> <code>&lt;textarea&gt;</code></li>
+        <li> <code>&lt;button&gt;</code></li>
+        <li> <code>&lt;fieldset&gt;</code></li>
+          <li> <code>&lt;legend&gt;</code></li>
+          <li> <code>&lt;datalist&gt;</code></li>
+          <li> <code>&lt;output&gt;</code></li>
+        <li> <code>&lt;option&gt;</code></li>
+        <li> <code>&lt;optgroup&gt;</code></li>
+    </ul>
+
+    <h3>Input</h3>
+    <form action="/action_page.php" autocomplete="off">
+        <input type="text" id="fname" name="fname"><br><br>
+        <input type="submit" value="Submit">
+    </form>
     
+    <h3>Labels</h3>
+    El elemento es útil para los usuarios de lectores de pantalla, porque el lector de pantalla leerá en voz alta la etiqueta cuando el usuario se centre en el elemento de entrada. </br>
+    El elemento también ayuda a los usuarios que tienen dificultades para hacer clic en regiones muy pequeñas (como botones de opción o casillas de verificación), porque cuando el usuario hace clic en el texto dentro del elemento, alterna el botón de opción / casilla de verificación </br></br>
+    <form action="/action_page.php" autocomplete="off">
+        <label for="firstname">First name:</label><br>
+        <input type="text" id="firstname" name="fname"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>Select</h3>
+    <p>El elemento define una lista desplegable. De forma predeterminada, se selecciona el primer elemento (Volvo) de la lista desplegable</p>
+    <p>Para definir una opción preseleccionado, agregue el atributo a la opción: selected</p> 
+    <form action="/action_page.php">
+        <label for="cars">Choose a car:</label>
+        <select id="cars" name="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat" selected>Fiat</option>
+          <option value="audi">Audi</option>
+        </select>
+        <input type="submit">
+    </form>
+
+    <p>Tabmién podemos ampliar la visiblidad:</p>
+    <form action="/action_page.php">
+        <label for="cars">Choose a car:</label>
+        <select id="cars" name="cars" size="3">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat">Fiat</option>
+          <option value="audi">Audi</option>
+        </select><br><br>
+        <input type="submit">
+    </form>
+    
+    <p>Tabmién podemos escoger varios valores (CTRL+Click):</p>
+    <form action="/action_page.php">
+        <label for="cars">Choose a car:</label>
+        <select id="cars" name="cars" size="4" multiple>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat">Fiat</option>
+          <option value="audi">Audi</option>
+        </select><br><br>
+        <input type="submit">
+    </form>
+
+    <h3>Textarea</h3>
+    <p>textarea define un imput multiliena.</p>
+    <form action="/action_page.php">
+    <textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea>
+    <br><br>
+    <input type="submit">
+    </form>
+
+    <p>También podemos hacerlo mediante CSS</p>
+    <form action="/action_page.php">
+        <textarea name="message" style="width:200px; height:200px;">The cat was playing in the garden.</textarea>
+        <br>
+        <input type="submit">
+    </form>
+
+    <h1>Botón</h1>
+    <p>Especifique siempre el atributo para el elemento button, no es lo mismo un type submit que un type button</p>
+    <button type="button" onclick="alert('Hola Mundo!')">Click Me!</button>
+
+    <h1>Fieldset & Legend</h1>
+    <p>fieldset es usado para un grupo de datos en el formulario, y la leyenda defune el caption para ese fieldset.</p>
+
+    <form action="/action_page.php">
+    <fieldset>
+        <legend>Personalia:</legend>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+    </fieldset>
+    </form>
+
+    <h1>Datalist</h1>
+    <p>El elemento especifica una lista de opciones predefinidos para un elemento</p>
+    <p>Los usuarios verán una lista desplegable de las opciones predefinidos a medida que ingresan datos.</p>
+    <form action="/action_page.php">
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+          <option value="Internet Explorer">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Edge">
+          <option value="Safari">
+        </datalist>
+        <input type="submit">
+      </form>
+      
+      <p><b>Note:</b> The datalist tag is not supported in Safari prior version 12.1.</p>
+
+      <h1>Output</h1>
+      <p>El elemento representa el resultado de un cálculo (como uno realizado por un script)</p>
+      <form action="/action_page.php" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        0
+        <input type="range" id="a" name="a" value="50">
+        100 +
+        <input type="number" id="b" name="b" value="50">
+        =
+        <output name="x" for="a b"></output>
+        <br><br>
+        <input type="submit">
+      </form>
+      
+      <p><strong>Note:</strong> The output element is not supported in Edge prior version 13.</p>
+
+      <h1>Tipos de input</h1>
+      <p>El valor por defecto de un input es text, y tenemos:</p>
+      <input type="text"> </br><!--Defines a single-line text input field:-->
+      <label >Password:</label>
+      <input type="password"> </br> <!--defines a password field:-->
+      <input type="submit"> </br><!--define un botón para enviar datos de formulario a un controlador de formularios, así que un botón de tipo submit podría ser reemplazado por un imput de este tipo sin problemas.-->
+      <input type="reset"> </br><!--define un botón de restablecimiento que restablecerá todos los valores del formulario a sus valores predeterminados:-->
+      <label >Aceptas los términos de uso:</label>
+      <input type="radio"> </br><!--define un botón de opción.Los botones de opción permiten al usuario seleccionar SOLO UNA de un número limitado de opciones-->
+      <form>
+        <input type="radio" id="html5" name="fav_language" value="HTML">
+        <label for="html5">HTML</label><br>
+        <input type="radio" id="css3" name="fav_language" value="CSS">
+        <label for="css3">CSS</label><br>
+        <input type="radio" id="javascript2" name="fav_language" value="JavaScript">
+        <label for="javascript2">JavaScript</label>
+      </form>
+      <form><!--define una casilla de verificación.Las casillas de verificación permiten a un usuario seleccionar CERO o MÁS opciones de un número limitado de opciones.-->
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        <label for="vehicle1"> I have a bike</label><br>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        <label for="vehicle2"> I have a car</label><br>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        <label for="vehicle3"> I have a boat</label>
+      </form>
+      <input type="button" value="botón"></br> <!--define un botón:-->
+      <label for="favcolor">Select your favorite color:</label>
+      <input type="color"> </br><!--Se utiliza para los campos de entrada que deben contener un color.-->
+      <label>Birthday:</label>
+      <input type="date"> </br><!--Se utiliza para los campos de entrada que deben contener una fecha-->
+      <label for="birthdaytime">Birthday (date and time):</label>
+      <input type="datetime-local" id="birthdaytime" name="birthdaytime"> </br><!--Especifica un campo de entrada de fecha y hora, sin zona horaria-->
+      <label for="email">Enter your email:</label>
+      <input type="email" id="email" name="email"></br> <!--Se utiliza para los campos de entrada que deben contener una dirección de correo electrónico.-->
+      <label for="myfile">Select a file:</label>
+      <input type="file" id="myfile" name="myfile"> <!--Define un campo de selección de archivos y un botón "Examinar" para cargas de archivos-->
+      <form>
+        <label for="fname">Campo oculto:</label> <!--Define un campo de entrada oculto (no visible para un usuario)-->
+        <input type="text" id="fname" name="fname"><br><br>
+        <input type="hidden" id="custId" name="custId" value="3487">
+        <input type="submit" value="Submit">
+      </form>
+      <form> <!--Permite al usuario seleccionar un mes y un año-->
+        <label for="bdaymonth">Birthday (month and year):</label>
+        <input type="month" id="bdaymonth" name="bdaymonth">
+      </form>
+      <form> <!--Define un campo de entrada numérico.-->
+        <label for="quantity">Quantity (between 1 and 5):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="5">
+      </form>
+
+      <h3>Rango de tipo entrada</h3>
+      <form>
+        <label for="vol">Volume (between 0 and 50):</label>
+        <input type="range" id="vol" name="vol" min="0" max="50">
+      </form>
+
+      
+      <h3>Búsqueda de tipo entrada</h3>
+      <form>
+        <label for="gsearch">Search Google:</label>
+        <input type="search" id="gsearch" name="gsearch">
+      </form>
+
+      <h3>Campo telefónico</h3>
+      <form>
+        <label for="phone">Enter your phone number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+      </form>
+
+      <h3>Campo de tiempo</h3>
+      <form>
+        <label for="appt">Seleccionar una hora:</label>
+        <input type="time" id="appt" name="appt">
+      </form>
+
+      <h3>Campo de url</h3> <!--Este campo espera que se le ingrese una dirección url-->
+      <form>
+        <label for="homepage">Escribe una dirección web:</label>
+        <input type="url" id="homepage" name="homepage">
+      </form>
+
+      <h3>Campo de semana</h3>
+      <p>Permite al usuario seleccionar una semana y un año</p>
+      <form>
+        <label for="week">Select a week:</label>
+        <input type="week" id="week" name="week">
+      </form>
+
+      <h1>Tipos de Atributos</h1>
+      <h3>Value</h3>
+      <p>el atributo "value" valor inicial para un campo de entrada</p> 
+      <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe">
+      </form>
+
+      <h3>Readonly</h3>
+      <p>el atributo "readonly" especifica que un campo de entrada es de solo lectura</p>
+      <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John" readonly><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe">
+      </form>
+
+      <h3>Disabled</h3>
+      <p>el atributo "Disabled" especifica que se debe deshabilitar un campo de entrada</p>
+      <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John" disabled><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe">
+      </form>
+
+      <h3>Size</h3>
+      <p>el atributo "Size" especifica el ancho visible, en caracteres, de un campo de entrada</p> </br>
+      <b>Nota:</b>El atributo funciona con los siguientes tipos de entrada: texto, búsqueda, tel, url, correo electrónico y contraseña.
+      <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" size="50"><br>
+        <label for="pin">PIN:</label><br>
+        <input type="text" id="pin" name="pin" size="4">
+      </form>
+
+      <h3>Maxlenght</h3>
+      <p>el atributo "Maxlenght" especifica el número máximo de caracteres permitidos en un campo de entrada.</p> </br>
+      <b>Nota:</b>Cuando se establece este atributo, el campo de entrada no aceptará más del número de caracteres especificado. Sin embargo, este atributo no proporciona ningún comentario. Entonces, si desea alertar al usuario, debe escribir código JavaScript. 
+      <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" size="50"><br>
+        <label for="pin">PIN:</label><br>
+        <input type="text" id="pin" name="pin" maxlength="4" size="4">
+      </form>
+
+
+      <h3>Min & Max</h3>
+      <p>el atributo "Min o Max" especifican los valores mínimo y máximo para un campo de entrada.</p> </br>
+      <p>Los atributos y funcionan con los siguientes inputs: número, rango, fecha, fecha-hora-local, mes, hora y semana.</p> </br>
+      Utilice los atributos max y min juntos para crear un rango de valores legales.
+      <form>
+        <label for="datemax">Enter a date before 1980-01-01:</label>
+        <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+      
+        <label for="datemin">Enter a date after 2000-01-01:</label>
+        <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>
+      
+        <label for="quantity">Quantity (between 1 and 5):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="5">
+      </form>
+
+      <h3>Multiple</h3>
+      <p>el atributo "Multiple" especifica que el usuario puede introducir más de un valor en un campo de entrada</p> 
+        El atributo funciona con los siguientes tipos de entrada: correo electrónico y archivo <br>
+        Selecciona varios archvios matentiendo CTRL o Shift mientas seleccionas.
+      <form>
+        <label for="files">Select files:</label>
+        <input type="file" id="files" name="files" multiple>
+      </form>
+
+
+      <h3>Pattern</h3>
+      <p>el atributo "Pattern" especifica una expresión regular con la que se comprueba el valor del campo de entrada cuando se envía el formulario</p> 
+      El atributo funciona con los siguientes tipos de entrada: texto, fecha, búsqueda, url, tel, correo electrónico y contraseña<br>
+      Consejo: Utilice el atributo title global para describir el patrón que ayudará al usuario. <br>
+      Consejo: Obtén más información sobre las expresiones regulares de JavaScrip <br>
+      <form>
+        <label for="country_code">Country code:</label>
+        <input type="text" id="country_code" name="country_code"
+        pattern="[A-Za-z]{3}" title="Las 3 letras del código de tu país, Ej: ECU">
+      </form>
+
+
+      <h3>Placeholder</h3>
+      <p>Especifica una breve sugerencia que describe el valor esperado de un campo de entrada</p> 
+      El atributo funciona con los siguientes tipos de entrada: texto, búsqueda, url, tel, correo electrónico y contraseña.<br>
+      <form>
+        <label for="phone">Enter a phone number:</label>
+        <input type="tel" id="phone" name="phone"
+        placeholder="123-45-678"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+      </form>
+
+      <h3>Required</h3>
+      <p>Especifica que se debe rellenar un campo de entrada antes de enviar el formulario</p> 
+      El atributo funciona con los siguientes tipos de entrada: texto, búsqueda, url, tel, correo electrónico, contraseña, selectores de fecha, número, casilla de verificación, radio y archivo.<br>
+      <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </form>
+
+      <h3>Step</h3>
+      <p>Especifica los intervalos de números legales para un campo de entrada</p> 
+      Ejemplo: si step="3", los números legales podrían ser -3, 0, 3, 6, etc.<br>
+      El atributo funciona con los siguientes tipos de entrada: número, rango, fecha, fecha-hora local, mes, hora y semana <br>
+      Consejo: Este atributo se puede utilizar junto con los atributos max y min para crear un rango de valores legales.<br>
+      <b>Nota:</b>Las restricciones de entrada no son infalibles, y JavaScript proporciona muchas formas de agregar entradas ilegales. Para restringir de forma segura la entrada, ¡también debe ser verificada por el receptor (el servidor)!<br>
+      <form>
+        <label for="points">Puntos:</label>
+        <input type="number" id="points" name="points" step="3">
+      </form>
+
+      <h3>Height & Width</h3>
+      <p>La entrada y los atributos especifican el alto y el ancho de un elemento, únicamente de una imagen o frame de video</p> 
+      <b>Consejo:</b>Especifique siempre los atributos de altura y anchura de las imágenes. Si se establecen la altura y la anchura, el espacio necesario para la imagen se reserva cuando se carga la página. Sin estos atributos, el navegador no conoce el tamaño de la imagen y no puede reservar el espacio adecuado para ella. El efecto será que el diseño de la página cambiará durante la carga (mientras se cargan las imágenes).<br>
+      <form>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="image" src="images/angemon.jpg" alt="Submit" width="48" height="48">
+      </form>
+
+      <h3>List-Datalist</h3>
+      <p>Referencia a un elemento que contiene opciones predefinidos para un elemento input con atributo list</p> 
+      <form>
+        <input list="browsers">
+        <datalist id="browsers">
+          <option value="Internet Explorer">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist>
+      </form>
+
+      <h3>Autocomplete</h3>
+      <p>Especifica si un formulario o un campo de entrada deben tener autocompletado encendido o desactivado.</p> 
+      <p>El atributo funciona con y los siguientes tipos: texto, búsqueda, url, tel, correo electrónico, contraseña, selectores de fecha, rango y color.</p>
+      <p>Puede ser aplicado a las etiquetas form o a input </p>
+      <form action="/action_page.php" autocomplete="on">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" autocomplete="off"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+
+      <h2>Otros atributos de formulario</h2>
+      <p>Podemos referirnos a un formulario mediante el atributo "form" en una etiqueta input, para eso el id del form debe coincidir con el valor del form= </p>
+      <form action="/action_page.php" id="form1">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+      
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname" form="form1">
+
+      <p>Podemos realizar un submit como administrador o como usuario, todo depende del atributo "formaction" el cual especifica la URL que atiende esa solicitud</p>
+      <p>Funciona para inputs de tipo submit o de tipo imagenes</p>
+      <form action="/action_page.php">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit">
+        <input type="submit" formaction="/action_page2.php" value="Submit as Admin">
+      </form>
+
+      <p>Podemos especificar cómo se deben codificar los datos del formulario cuando se envían (solo para formularios con method="post") mediate "formectype"</p>
+      <p>Ahorita está como Multopart/form-data, es decir que el code sería algo como: ------WebKitFormBoundaryuCVHvUMR8mr9maDG Content-Disposition: form-data; name="fname" Jhon ------WebKitFormBoundaryuCVHvUMR8mr9maDG--</p>
+      <p>Funciona para inputs de tipo submit o de tipo imagenes</p>
+      <form action="/action_page_binary.asp" method="post">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <input type="submit" value="Submit">
+        <input type="submit" formenctype="multipart/form-data"
+        value="Submit as Multipart/form-data">
+      </form>
+
+      <p>Podemos no validar que un input se deba validar cuando se envía</p>
+      <form action="/action_page.php">
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <input type="submit" value="Submit"> <!--Este botón si valida los datos-->
+        <input type="submit" formnovalidate="formnovalidate" value="Submit without validation">
+      </form>
+
+      <p>Podemos no validar un formulario, es decir, todos los datos del formulario no deben validarse cuando se envíen.</p>
+      <form action="/action_page.php" novalidate>
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+
 </body>
 </html>

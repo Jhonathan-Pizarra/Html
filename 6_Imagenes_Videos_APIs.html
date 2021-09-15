@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>SVG</h1>
+  <p>
+    <ul>
+      <li>SVG son las siglas de Scalable Vector Graphics (Gráficos vectoriales escalables)</li>
+      <li>SVG se utiliza para definir gráficos para la Web</li>
+      <li>SVG tiene varios métodos para dibujar trazados, cuadros, círculos, texto e imágenes gráficas.</li>
+    </ul>
+  </p>
+
+  <h3>Circulo</h3>
+  <svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" stroke="yellow" stroke-width="4" fill="yellow" />
+  </svg>
+
+  <h3>Rectángulo</h3>
+  <svg width="400" height="100">
+    <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,255)" />
+  </svg>
+
+  <h3>Bordes Redondeados</h3>
+  <svg width="400" height="180">
+    <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+    style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+  </svg>
+
+  <h3>Estrella</h3>
+  <svg width="300" height="200">
+    <polygon points="100,10 40,198 190,78 10,78 160,198"
+    style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+  </svg>
+
+  <h3>Logotipo</h3>
+  <svg height="130" width="500">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+        <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+    <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+  </svg>
+  
+  <h1>Multemedia</h1>
+  <p>Las páginas web a menudo contienen elementos multimedia de diferentes tipos y formatos</p>
+    Los elementos multimedia (como audio o video) se almacenan en archivos multimedia. <br>
+    La forma más común de descubrir el tipo de archivo es mirar la extensión del archivo. <br>
+    Los archivos multimedia tienen formatos y diferentes extensiones como: .wav, .mp3, .mp4, .mpg, .wmv y .avi. <br>
+  <p>Formatos de video</p>
+    Hay muchos formatos de video por ahí. Los formatos MP4, WebM y Ogg son compatibles con HTML.<br>
+    El formato MP4 es recomendado por YouTube.<br>
+
+  <p>Formatos de audio</p>
+    Los formatos de audio MP3, WAV y Ogg son compatibles con el estándar HTML.<br>
+    MP3 es el mejor formato para música grabada comprimida. El término MP3 se ha convertido en sinónimo de música digital.<br>
+    Si su sitio web se trata de música grabada, MP3 es la opción.<br>
+
+
+    <h3>Videos</h3>
+    <video width="320" height="240" controls>
+      <source src="videos/eternalFlame.mp4" type="video/mp4">
+    </video>
+    <br>
+    ¿Cómo funciona? El atributo "controls" agrega controles de vídeo, como reproducción, pausa y volumen. <br>
+    Es una buena idea incluir siempre y atributos. Si la altura y la anchura no están establecidas, es posible que la página parpadee mientras se carga el vídeo. <br>
+    El elemento "source" permite especificar archivos de video de los que hay en internet. El navegador utilizará el primer formato reconocido: mp4  <br>
+    Para iniciar un vídeo automáticamente, utilice el atributo: "autoplay" <br>
+    <video width="320" height="240" autoplay>
+      <source src="videos/eternalFlame.mp4" type="video/mp4">
+    </video>
+    Los navegadores Chromium no permiten la reproducción automática en la mayoría de los casos. Sin embargo, siempre se permite la reproducción automática silenciada.
+    <video width="320" height="240" autoplay muted>
+      <source src="videos/eternalFlame.mp4" type="video/mp4">
+    </video>
+
+    
+    <h3>Subtitulos</h3>
+    <p>Si usamos la etiqueta "track" podemos usar subtitulos!, para eso hacemos uso de un archivo .vtt </p>
+    <video width="320" height="240" controls>
+      <source src="forrest_gump.mp4" type="video/mp4">
+      <source src="forrest_gump.ogg" type="video/ogg">
+      <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+      <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
+    </video>
+
+    <h3>Audios</h3>
+    Para reproducir un archivo de audio en HTML, utilice el elemento: "audio" <br>
+    El atributo "controls" agrega controles de audio, como reproducción, pausa y volumen <br>
+    <audio controls>
+      <source src="audios/Flamingosis - Football Head.mp3" type="audio/mpeg">
+    </audio>
+
+    <p>Para iniciar un archivo de audio automáticamente, utilice el atributo: "autoplay"</p>
+    <audio controls autoplay>
+      <source src="audios/Stompin Hey Arnold Ending Theme.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+    Los navegadores Chromium no permiten la reproducción automática en la mayoría de los casos. <br>
+    Pasa lo mismo con la música silenciada:
+    <audio controls autoplay muted>
+      <source src="audios/Stompin Hey Arnold Ending Theme.mp3" type="audio/mp3">
+    </audio>
+    <p>Puedes conocer más sobre audios y sus propiedades aqui: <a href="https://www.w3schools.com/tags/ref_av_dom.asp">mas atributos</a></p>
+
+    <h1>YouTube</h1>
+    Convertir videos a diferentes formatos puede ser difícil y llevar mucho tiempo. <br>
+    Una solución más fácil es permitir que YouTube reproduzca los videos en su página web. <br>
+    <h3>YouTube - ID</h3>
+    YouTube mostrará un id (como tgbNymZ7vqY) cuando guardes (o reproduzcas) un video. Puedes usar este identificador y hacer referencia a su video en el código HTML. <br>
+
+    Para usar un video de YouTube:
+    <ul>
+      <li>Sube el video a YouTube</li>
+      <li>Toma nota de la identificación del video</li>
+      <li>Utiliza el elemento "iframe"</li>
+      <li>Deje que el atributo apunte a la URL del vídeo mediante el atributo "src"</li>
+      <li>Utilice los atributos y para especificar la dimensión del reproductor width height</li>
+      <li>Agregue cualquier otro parámetro a la URL</li>
+    </ul>
+    Así: <br>
+
+    <iframe width="420" height="315"
+      src="https://www.youtube.com/embed/4CsRccs08Ns">
+    </iframe>
+
+    <br>
+    <p>Puedes permitir que tu video comience a reproducirse automáticamente cuando un usuario visite la página, agregándolo a la URL de YouTube.  <br>
+      Sin embargo, Iiniciar automáticamente un video es molesto para sus visitantes!</p>
+      <p>Esto se logra añadiendo "?autoplay=1" y si se quiere silecniar, también, mira el siguiente ejemplo:</p>
+    <iframe width="420" height="345" 
+      src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+    </iframe>
+
+    <h3>Lista de reproducción</h3>
+    <p>Una lista separada por comas de los vídeos que se pueden reproducir (además de la URL original). Así:</p>
+    <iframe width="420" height="345" 
+      src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY,4CsRccs08Ns,xenCXuEE6R4">
+    </iframe>
+
+    <h3>Bucle</h3>
+    <p>Agregue "loop=1" para permitir que su video se repita para siempre.</p>
+    <iframe width="420" height="315"
+      src="https://www.youtube.com/embed/AjOP1uU8Vtk?loop=1">
+    </iframe>
+
+    <h3>Controles de YouTube</h3>
+    <p>Añade "controls" para mostrar controles en el reproductor de vídeo. <br>
+    Puedes añadir controls=1 para que se muestren o controls=0 para que no se muestren</p>
+    <iframe width="420" height="315"
+      src="https://www.youtube.com/embed/QTKLdXuUeBA?controls=0">
+    </iframe>
+    
+    <h1>Geolocalización</h1>
+    <p>La API de geolocalización HTML se utiliza para obtener la posición geográfica de un usuario. <br>
+      La geolocalización es más precisa para dispositivos con GPS, como teléfonos inteligentes. <br>
+      Dado que esto puede comprometer la privacidad, la posición no está disponible a menos que el usuario la apruebe.
+    </p>
+
+    <p>A partir de Chrome 5.0, la API de geolocalización solo funcionará en contextos seguros como HTTPS. <br> 
+      Si su sitio está alojado en un origen no seguro (como HTTP), las solicitudes para obtener la ubicación de los usuarios ya no funcionarán.
+    </p>
+
+    <h3>Latitud y Longitud</h3>
+    <p>El siguiente método se utiliza para devolver la posición del usuario: getCurrentPosition()</p>
+
+    <button onclick="getLocation()">Obtener</button>
+    <p id="demo"></p>
+
+    <h3>Mapas</h3>
+    <p>Para mostrar el resultado en un mapa, necesitas acceder a un servicio de mapas, como Google Maps, Petal Maps, etc.</p>
+
+      
+
+    <h3>Video HTML + JS</h3>
+    <div style="text-align:center"> 
+      <button onclick="playPause()">Play/Pause</button> 
+      <button onclick="makeBig()">Big</button>
+      <button onclick="makeSmall()">Small</button>
+      <button onclick="makeNormal()">Normal</button>
+      <br><br>
+      <video id="video1" width="420">
+        <source src="videos/benjaminButton.mp4" type="video/mp4">
+      </video>
+    </div> 
+  
+
+    <script> 
+    var myVideo = document.getElementById("video1"); 
+    
+    function playPause() { 
+      if (myVideo.paused) 
+        myVideo.play(); 
+      else 
+        myVideo.pause(); 
+    } 
+    
+    function makeBig() { 
+        myVideo.width = 560; 
+    } 
+    
+    function makeSmall() { 
+        myVideo.width = 320; 
+    } 
+    
+    function makeNormal() { 
+        myVideo.width = 420; 
+    } 
+    </script> 
+
+    <script>
+      var x = document.getElementById("demo");
+      
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+      
+      function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude;
+      }
+      /*Vamos también a implementar manejo de errores: */
+      function showError(error) {
+        switch(error.code) {
+          case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+          case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+          case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+          case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+        }
+      }
+      </script>
+        
+
+</body>
+</html>
